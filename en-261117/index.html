@@ -39,8 +39,12 @@ td b{font-weight:700}
 .vid h3{font-size:16px;margin-top:12px}
 .vid p{font-size:14px;color:var(--body);margin-top:2px}
 .vid span{font-size:12.5px;color:var(--sub)}
+.ads{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+.ad img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--line);border-radius:10px}
+.ad figcaption{font-size:14px;font-weight:600;margin-top:8px}
+.ad figcaption span{display:block;font-size:12.5px;font-weight:500;color:var(--sub)}
 footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--sub)}
-@media(max-width:760px){.two,.vids{grid-template-columns:1fr}h1{font-size:24px}.land p{min-height:0}}
+@media(max-width:760px){.two,.vids{grid-template-columns:1fr}.ads{grid-template-columns:1fr 1fr;gap:12px}h1{font-size:24px}.land p{min-height:0}}
 </style>
 </head>
 <body>
@@ -48,9 +52,9 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-si
 <header>
   <small>DAYBEAU Myeongdong Signature · 2026-11-17</small>
   <h1>영미권 XERF 광고안<br>XERF ads for English-speaking markets</h1>
-  <p>XERF 400샷 ₩990,000 이벤트 · 랜딩 2종과 영상 소재 3편입니다.<br>XERF 400 shots for ₩990,000 — two landing pages and three video ads.</p>
+  <p>XERF 400샷 ₩990,000 이벤트 · 랜딩 2종, 이미지 소재 7종, 영상 소재 3편입니다.<br>XERF 400 shots for ₩990,000 — two landing pages, seven image ads and three video ads.</p>
 </header>
-<nav><a href="#landing">랜딩 Landing pages</a><a href="#video">영상 Video ads</a></nav>
+<nav><a href="#landing">랜딩 Landing pages</a><a href="#image">이미지 Image ads</a><a href="#video">영상 Video ads</a></nav>
 
 <section id="landing">
   <h2>랜딩 2종<span>Two landing pages</span></h2>
@@ -80,6 +84,20 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-si
   </table>
 </section>
 
+<section id="image">
+  <h2>이미지 소재 7종<span>Seven image ads · 4:5</span></h2>
+  <p class="lead">가격은 원화(KRW)로만 표기했습니다. 모델 사진은 AI로 만들었고 소재 아래에 표기했습니다. 누르면 크게 볼 수 있습니다.<br>Prices are shown in KRW only. Model photos are AI-generated and labelled on each ad. Tap to view full size.</p>
+  <div class="ads">
+    <figure class="ad"><a href="ref/ad_a1.jpg" target="_blank" rel="noopener"><img src="ref/ad_a1.jpg" alt="세르프_모델형4" loading="lazy"></a><figcaption>세르프_모델형4<span>Model 4</span></figcaption></figure>
+    <figure class="ad"><a href="ref/ad_m1.jpg" target="_blank" rel="noopener"><img src="ref/ad_m1.jpg" alt="세르프_모델형1" loading="lazy"></a><figcaption>세르프_모델형1<span>Model 1</span></figcaption></figure>
+    <figure class="ad"><a href="ref/ad_m2.jpg" target="_blank" rel="noopener"><img src="ref/ad_m2.jpg" alt="세르프_모델형2" loading="lazy"></a><figcaption>세르프_모델형2<span>Model 2</span></figcaption></figure>
+    <figure class="ad"><a href="ref/ad_m3.jpg" target="_blank" rel="noopener"><img src="ref/ad_m3.jpg" alt="세르프_모델형3" loading="lazy"></a><figcaption>세르프_모델형3<span>Model 3</span></figcaption></figure>
+    <figure class="ad"><a href="ref/ad_p1.jpg" target="_blank" rel="noopener"><img src="ref/ad_p1.jpg" alt="세르프_가격표형1" loading="lazy"></a><figcaption>세르프_가격표형1<span>Price table 1</span></figcaption></figure>
+    <figure class="ad"><a href="ref/ad_d1.jpg" target="_blank" rel="noopener"><img src="ref/ad_d1.jpg" alt="세르프_원장형1" loading="lazy"></a><figcaption>세르프_원장형1<span>Doctor 1</span></figcaption></figure>
+    <figure class="ad"><a href="ref/ad_a2.jpg" target="_blank" rel="noopener"><img src="ref/ad_a2.jpg" alt="세르프_원장형2" loading="lazy"></a><figcaption>세르프_원장형2<span>Doctor 2</span></figcaption></figure>
+  </div>
+</section>
+
 <section id="video">
   <h2>영상 소재 3편<span>Three video ads · 9:16</span></h2>
   <p class="lead">11월 14일 명동점에서 촬영한 영상으로 만들었습니다. 나레이션·자막은 영어입니다.<br>Made from the footage filmed at the Myeongdong clinic on Nov 14. English voice-over and captions.</p>
@@ -90,7 +108,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-si
   </div>
 </section>
 
-<footer>표지 모델과 전후 이미지는 AI로 제작했고 랜딩에 표기했습니다. 병원·시술 사진과 영상은 실제 촬영분입니다.<br>The cover model and before/after images are AI-generated and labelled on the pages. Clinic and treatment photos and videos are real.</footer>
+<footer>표지·이미지 소재의 모델과 전후 이미지는 AI로 제작했고 각각 표기했습니다. 병원·시술 사진과 영상은 실제 촬영분입니다.<br>Models in the covers and image ads, and the before/after images, are AI-generated and labelled. Clinic and treatment photos and videos are real.</footer>
 </div>
 </body>
 </html>
