@@ -195,7 +195,7 @@ footer{padding:20px 22px 28px;font-size:11px;color:var(--sub);line-height:1.6;bo
 </style>
 </head>
 <body>
-<div style="position:sticky;top:0;z-index:99999;background:#0a7d3b;color:#fff;font:700 14px/1.4 sans-serif;text-align:center;padding:8px">TEST · 새 방식 (왓츠앱 앱 바로 열기) · 추적 꺼짐</div>
+<div style="position:sticky;top:0;z-index:99999;background:#0a7d3b;color:#fff;font:700 14px/1.4 sans-serif;text-align:center;padding:8px">TEST · 새 방식 v2 (아이폰 wa.me · 안드로이드 앱 바로) · 추적 꺼짐</div>
 <div class="wrap">
 
 <div class="urg">Event price ends Dec 15 · <b data-cd-text>—</b> left</div>
@@ -387,7 +387,7 @@ const logClick = ch => {
   logged[ch] = 1;
   try {
     const fbclid = Q.get("fbclid") || "";
-    const u = LOG_URL + "?" + new URLSearchParams({ code: `XERF-${REF}`, ch, page: "en-xerf", fbclid, ad: Q.get("utm_content") || "", camp: Q.get("utm_campaign") || "", lang: navigator.language || "", tz: Intl.DateTimeFormat().resolvedOptions().timeZone || "", dev: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc", ref: document.referrer, fbp: ck("_fbp"), fbc: ck("_fbc") || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : "") });
+    const u = LOG_URL + "?" + new URLSearchParams({ code: `XERF-${REF}`, ch, page: "en-xerf", fbclid, ad: Q.get("utm_content") || "", camp: Q.get("utm_campaign") || "", lang: navigator.language || "", tz: Intl.DateTimeFormat().resolvedOptions().timeZone || "", dev: /Android/i.test(navigator.userAgent) ? "android" : /iPhone|iPad|iPod/i.test(navigator.userAgent) ? "iphone" : /Mobi/i.test(navigator.userAgent) ? "mobile" : "pc", ref: document.referrer, fbp: ck("_fbp"), fbc: ck("_fbc") || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : "") });
     try { fetch(u, { mode: "no-cors", keepalive: true }).catch(() => {}); } catch (_) { new Image().src = u; }
   } catch (_) {}
 };
@@ -429,7 +429,7 @@ const waGo = url => {
 };
 [["[data-wa]", WA_URL, "WhatsApp"], ["[data-ig]", IG_URL, "Instagram"]].forEach(([sel, url, channel]) => document.querySelectorAll(sel).forEach(a => {
   if (url && channel === "Instagram") { a.href = url; a.addEventListener("click", e => { e.preventDefault(); igGo(url); }); return; }
-  if (url && channel === "WhatsApp") { a.href = url; a.addEventListener("click", e => { e.preventDefault(); contact(channel); waGo(url); }); return; }
+  if (url && channel === "WhatsApp") { a.href = url; a.target = "_blank"; a.rel = "noopener"; a.addEventListener("click", e => { contact(channel); if (!/Android/i.test(navigator.userAgent)) return; e.preventDefault(); waGo(url); }); return; }
   if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; a.addEventListener("click", () => contact(channel)); return; }
   a.addEventListener("click", e => { e.preventDefault(); toast(); });
 }));
